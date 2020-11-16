@@ -1,0 +1,18 @@
+$button__bg-color: var(--bg--dark, #333);
+$button__color: var(--button__color, #efefef);
+$button__border-width: 2px;
+$button__border-color: #ddd;
+
+.canon-button {
+    padding: $space/4 $space/2;
+    color: $button__color;
+    background: $button__bg-color;
+    border-color: $button__border-color;
+    border-width: $button__border-width;
+    border-style: solid;
+    border-radius: 4px;
+    appearance: none;
+    &:hover {
+        filter: invert(100%);
+    }
+}
