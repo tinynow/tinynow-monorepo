@@ -4,9 +4,9 @@ sass.compiler = require('sass');
 
 
 function compile(cb) {
-    return src('src/**/*.scss')
+    return src(['src/global.scss','src/utilities.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('dist/style.css'))
+        .pipe(dest('dist/'))
 }
 function serve() {
     watch('src/**/*.scss', compile);

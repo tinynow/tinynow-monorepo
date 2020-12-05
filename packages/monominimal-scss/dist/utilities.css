@@ -52,618 +52,6 @@ If you do nothing, it should look pretty good anyway.
 /* *
 * For radios and checkboxes - the pseudo-checkbox hack
 */
-/* =======================================================================
-    Configuration
-
-    ### Using CSS 
-    Any of the variables can be overridden by setting CSS custom properties
-    anywhere in the document. For example:
-    ```
-    html {
-        --base-font-family: MyCustomFont, 'Comic Sans', script;
-    }
-    .my-component {
-        --bg-dark: darkmagenta;
-    }
-    ```
-    ### Using SCSS
-    If you are taking advantage of the type setting, media-query, and spacing systems,
-    then you must configure the Sass variables. This is because these settings are used
-    to generate CSS used by certain contexts and utilities at build time.
-========================================================================== */
-/*
-Typography & Spacing
-=================================================== */
-/* System fonts are the most performant option */
-/* =======================================================================
-     Colors
-========================================================================== */
-/**
-*
-* Generate consistent font sizes and line heights
-* @require $space
-*
-*/
-/* Keep size of fonts consistent */
-/* Vertical rhythm */
-/* 
-We aren't trying to be 100% automatic, 
-but synchronizing line-height with our standard spacing 
-allows you to create a perfect vertical rhythm, if you feel like it. 
-If you do nothing, it should look pretty good anyway.
-*/
-/**
-*
-* Takes any valid length value OR sm, md, lg, xl
-* See: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-*
-* Modified to rems default 16px
-* 600px = 37.5rem
-* 900px = 56.25rem
-* 1200px = 75rem
-* 1800px = 112.5rem
-*/
-/* *
-* For radios and checkboxes - the pseudo-checkbox hack
-*/
-/* Global styles are imported in App.vue */
-/**
- * 1. Sensible box model 
- * 2. Finer control of margins and padding
- * 3. Prevent adjustments of font size after orientation changes in iOS.
- */
-::placeholder {
-  color: gray;
-}
-
-html {
-  box-sizing: border-box;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 3 */
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 2 */
-}
-
-/* Create one directional margins */
-* {
-  margin-bottom: 0;
-}
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
-  /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: inherit;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.75;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-fieldset {
-  border: none;
-  /* opinion - whitespace can work just as well as a border */
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-textarea {
-  overflow: auto;
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-[type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-details {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-summary {
-  display: list-item;
-}
-
-/**
- * Add the correct display in IE 10+.
- */
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-[hidden] {
-  display: none !important;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-html,
-body {
-  min-height: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-pre {
-  max-width: 100%;
-  overflow-x: scroll;
-}
-
-/**
-* Generate consistent font sizes and line heights
-* @require $space
-*/
-/**
-* Vertical rhythm
-*/
-html {
-  font-size: 93.75%;
-}
-@media screen and (min-width: 37.5rem) {
-  html {
-    font-size: 125%;
-  }
-}
-
-body {
-  font-size: 1rem;
-  line-height: 1.875rem;
-  line-height: 1.333;
-  font-family: var(--base-font-family, -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif);
-  --text--xs: 0.75rem;
-  --text--sm: 0.8rem;
-  --text--0: 1rem;
-  --text--1: 1.25rem;
-  --text--2: 1.5rem;
-  --text--3: 2.25rem;
-  --text--4: 3.375rem;
-  --text--5: 5rem;
-  --text--6: 7.6rem;
-}
-@media screen and (min-width: 37.5rem) {
-  body {
-    font-size: 1rem;
-    line-height: 1.875rem;
-  }
-}
-
-/* 1. Align left edge of list item text */
-ul {
-  list-style-position: inside;
-  /* 1 */
-  margin-left: 1.1em;
-  /* 1 */
-  text-indent: -1.1em;
-  /* 1 */
-}
-
-h6,
-.h6 {
-  font-size: 1rem;
-  line-height: 1.875rem;
-}
-
-h5,
-.h5 {
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-  font-weight: 200;
-}
-@media screen and (min-width: 56.25rem) {
-  h5,
-.h5 {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-  }
-}
-
-h4,
-.h4 {
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
-@media screen and (min-width: 37.5rem) {
-  h4,
-.h4 {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-  }
-}
-@media screen and (min-width: 56.25rem) {
-  h4,
-.h4 {
-    font-size: 2.25rem;
-    line-height: 3.28125rem;
-  }
-}
-
-h3,
-.h3 {
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-}
-@media screen and (min-width: 37.5rem) {
-  h3,
-.h3 {
-    font-size: 2.25rem;
-    line-height: 3.28125rem;
-  }
-}
-@media screen and (min-width: 56.25rem) {
-  h3,
-.h3 {
-    font-size: 3.375rem;
-    line-height: 4.21875rem;
-  }
-}
-
-h2,
-.h2 {
-  font-size: 2.25rem;
-  line-height: 3.28125rem;
-  font-weight: 200;
-}
-@media screen and (min-width: 37.5rem) {
-  h2,
-.h2 {
-    font-size: 3.375rem;
-    line-height: 4.21875rem;
-  }
-}
-@media screen and (min-width: 56.25rem) {
-  h2,
-.h2 {
-    font-size: 5rem;
-    line-height: 1;
-  }
-}
-
-h1,
-.h1 {
-  font-size: 2.25rem;
-  line-height: 3.28125rem;
-}
-@media screen and (min-width: 37.5rem) {
-  h1,
-.h1 {
-    font-size: 3.375rem;
-    line-height: 4.21875rem;
-  }
-}
-@media screen and (min-width: 56.25rem) {
-  h1,
-.h1 {
-    font-size: 5rem;
-    line-height: 1;
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-@keyframes scroll-right-from-middle {
-  0% {
-    transform: translateX(0);
-  }
-  58% {
-    transform: translateX(100%);
-  }
-  58.1% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-*:focus {
-  outline: 2px dotted var(--focus-outline--light);
-}
-
-a, .link-style {
-  color: var(--link-color, brown);
-}
-a:hover, a:active, .link-style:hover, .link-style:active {
-  color: var(--link-color--hover, maroon);
-}
-.canon-form legend,
-.canon-form label {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-.canon-form .canon-checkbox-list label {
-  font-size: 1.25rem;
-  line-height: 1;
-}
-
-.canon-layout {
-  /* A tube of content that with reasonable left and right margins */
-}
-.canon-layout.--tube {
-  max-width: 100%;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-}
-@media screen and (min-width: 37.5rem) {
-  .canon-layout.--tube {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media screen and (min-width: 56.25rem) {
-  .canon-layout.--tube {
-    padding-left: 1.875rem;
-    padding-right: 1.875rem;
-  }
-}
-@media screen and (min-width: 75rem) {
-  .canon-layout.--tube {
-    padding-left: 3.75rem;
-    padding-right: 3.75rem;
-  }
-}
-.canon-layout.--readable p, .canon-layout.--readable li {
-  max-width: 35rem;
-}
-.canon-layout.--centered {
-  margin-left: auto;
-  margin-right: auto;
-}
-.canon-layout.--auto-flow > * + * {
-  margin-top: 1.875rem;
-}
-.canon-layout.--auto-flow-compact {
-  line-height: 1.25;
-}
-.canon-layout.--auto-flow-compact > * + * {
-  margin-top: 0.9375rem;
-}
-.canon-layout.--full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
 .br0 {
   border-radius: 0;
 }
@@ -1666,94 +1054,84 @@ a:hover, a:active, .link-style:hover, .link-style:active {
   transform: translateX(0%);
 }
 
-.canon-u-type--xs {
-  font-size: 0.75rem;
-  line-height: 1.2;
-}
-
-.canon-u-type--sm {
-  font-size: 0.8rem;
-  line-height: 1.3125rem;
-}
-
-.canon-u-type--0 {
-  font-size: 1rem;
-  line-height: 1.875rem;
-}
-
-.canon-u-type--1 {
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
-
-.canon-u-type--2 {
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-}
-
-.canon-u-type--3 {
-  font-size: 2.25rem;
-  line-height: 3.28125rem;
-}
-
-.canon-u-type--4 {
-  font-size: 3.375rem;
-  line-height: 4.21875rem;
-}
-
-.canon-u-type--5 {
-  font-size: 5rem;
+.canon-u-type--7s {
+  font-size: 0.7rem;
   line-height: 1;
+}
+
+.canon-u-type--7 {
+  font-size: 0.75rem;
+  line-height: 1.40625rem;
 }
 
 .canon-u-type--6 {
-  font-size: 7.6rem;
-  line-height: 5.625rem;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
 }
 
-.canon-u-compact--xs {
-  font-size: 0.75rem;
-  line-height: 1.2;
-}
-
-.canon-u-compact--sm {
-  font-size: 0.8rem;
-  line-height: 0.9375rem;
-}
-
-.canon-u-compact--0 {
+.canon-u-type--5 {
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.875rem;
 }
 
-.canon-u-compact--1 {
+.canon-u-type--4 {
   font-size: 1.25rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-type--3 {
+  font-size: 1.75rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-type--2 {
+  font-size: 2rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-type--1 {
+  font-size: 2.5rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-compact--7s {
+  font-size: 0.7rem;
   line-height: 1;
 }
 
-.canon-u-compact--2 {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.canon-u-compact--3 {
-  font-size: 2.25rem;
-  line-height: 2.8125rem;
-}
-
-.canon-u-compact--4 {
-  font-size: 3.375rem;
-  line-height: 1;
-}
-
-.canon-u-compact--5 {
-  font-size: 5rem;
-  line-height: 1;
+.canon-u-compact--7 {
+  font-size: 0.75rem;
+  line-height: 1.40625rem;
 }
 
 .canon-u-compact--6 {
-  font-size: 7.6rem;
-  line-height: 5.625rem;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+}
+
+.canon-u-compact--5 {
+  font-size: 1rem;
+  line-height: 1.875rem;
+}
+
+.canon-u-compact--4 {
+  font-size: 1.25rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-compact--3 {
+  font-size: 1.75rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-compact--2 {
+  font-size: 2rem;
+  line-height: 3.75rem;
+}
+
+.canon-u-compact--1 {
+  font-size: 2.5rem;
+  line-height: 3.75rem;
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -1788,5 +1166,3 @@ a:hover, a:active, .link-style:hover, .link-style:active {
 .w-0 {
   width: 0;
 }
-
-/*# sourceMappingURL=style.css.map */
