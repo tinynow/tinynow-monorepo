@@ -1,0 +1,15 @@
+html,
+body {
+    min-height: 100%;
+}
+
+// Make images responsive by default.
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: scroll;
+}

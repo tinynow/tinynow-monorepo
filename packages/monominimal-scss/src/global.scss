@@ -1,0 +1,13 @@
+@import 'configuration.scss';
+
+/* Global styles are imported in App.vue */
+@import '02_global/reset.scss';
+@import '02_global/responsive.scss';
+@import '02_global/typography.scss';
+@import '02_global/animations.scss';
+@import '02_global/focus.scss';
+@import '02_global/links.scss';
+
+@import '03_contexts/forms.scss';
+@import '03_contexts/layout.scss';
+

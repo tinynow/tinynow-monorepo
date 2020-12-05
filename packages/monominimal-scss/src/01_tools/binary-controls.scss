@@ -1,0 +1,58 @@
+/* *
+* For radios and checkboxes - the pseudo-checkbox hack
+*/
+//TODO: move to components
+
+@mixin binary-control($checkbox: false, $size: 1rem, $color: currentColor,$focusColor: blue) {
+
+    /* hide the real input */
+    input {
+        position: absolute;
+        left: -999em;
+    }
+    label {
+        display: flex;
+        place-items: center;
+        cursor: pointer;
+    }
+    /* the fake input control */
+    label:before {
+        content: '\a0'; // simulates a non-breaking space: http://stackoverflow.com/questions/190396/adding-html-entities-using-css-content
+        display: block; // keep structure but stay inline with label
+        flex-shrink: 0;
+        height: $size;
+        width: $size;
+        margin-top: 4px;
+        margin-right: $space/4;
+        border: 2px solid $color;
+
+        @if $checkbox {
+            border-radius: 3px;
+        } @else {
+            border-radius: $size/2;
+        }
+    }
+    /* the actual label text */
+    [class*="__label-text"] {
+        display: block;
+    }
+    input:checked ~ label:before {
+        @if $checkbox {
+            background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%228%22%20height%3D%228%22%20viewBox%3D%220%200%208%208%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M6.41%200l-.69.72-2.78%202.78-.81-.78-.72-.72-1.41%201.41.72.72%201.5%201.5.69.72.72-.72%203.5-3.5.72-.72-1.44-1.41z%22%20transform%3D%22translate(0%201)%22%20%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: $color;
+        } @else {
+            background-color: $color;
+            box-shadow: inset 0 0 0 3px white; 
+        }
+    }
+    input:focus ~ label:before {
+
+        box-shadow: inset 0 0 0 3px white, 0 0 0 2px var(--focus-outline--light);
+
+        @if $checkbox {
+            outline: 2px dotted var(--focus-outline--light);
+        }
+    }
+}

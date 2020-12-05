@@ -1,0 +1,6 @@
+.shadow-1 {
+    @include box-shadow();
+}
+.focus-ring {
+    box-shadow: 2px solid var(--outline--focus);
+}

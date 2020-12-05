@@ -1,0 +1,35 @@
+/**
+*
+* Takes any valid length value OR sm, md, lg, xl
+* See: https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+*
+* Modified to rems default 16px
+* 600px = 37.5rem
+* 900px = 56.25rem
+* 1200px = 75rem
+* 1800px = 112.5rem
+*/
+
+@mixin min-screen-width($size) {
+    @if $size == sm {
+        @media screen and (min-width: 37.5rem) {
+            @content;
+        }
+    } @else if $size == md {
+        @media screen and (min-width: 56.25rem) {
+            @content;
+        }
+    } @else if $size == lg {
+        @media screen and (min-width: 75rem) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media screen and (min-width: 112.5rem) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: #{$size}) {
+            @content;
+        }
+    }
+}

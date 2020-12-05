@@ -1,0 +1,18 @@
+    @function map-values($map) {
+        $values: ();
+        @each $key, $value in $map {
+            // Add key to list of keys
+            $values: append($values, #{$value} 20%, $separator: comma);
+        }
+
+        @return $values;
+    }
+@mixin linear-gradient($color-stop-map) {
+    /* autoprefixer: off */
+    background-image: linear-gradient(90deg, map-values($color-stop-map));
+}
+
+@mixin radial-gradient($color-stop-map) {
+    /* autoprefixer: off */
+    background-image: radial-gradient(circle, map-values($color-stop-map));
+}

@@ -1,0 +1,14 @@
+//goes one level deep
+
+@function deep-map-get($map, $item) {
+    $value: null;
+    @if map-has-key($map, $item) {
+        @return map-get($map, $item);
+    } @else {
+        @each $key, $val in $map {
+            @if map-has-key($val, $item) {
+              @return map-get($val, $item);
+            }
+        }
+    }
+};

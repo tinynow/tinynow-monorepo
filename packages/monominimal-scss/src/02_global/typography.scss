@@ -1,0 +1,147 @@
+// TODO: normalize and centralize type settings
+// TODO: font-weight utilities should inherit values from default or theme config
+/**
+* Generate consistent font sizes and line heights
+* @require $space
+*/
+$font-weight-normal: normal;
+$font-weight-bold: 800;
+$font-weight-light: 200;
+
+$type-scale: (
+    xs: .75rem,
+    sm: .8rem, //16px
+    0: 1rem, //20px
+    1: 1.25rem, //25px
+    2: 1.5rem, //30px
+    3: 2.25rem, //36px
+    4: 3.375rem, //54px
+    5: 5rem, //120px
+    6: 7.6rem, //152px
+);
+
+@function type-scale($level) {
+    @return map-get($type-scale, $level);
+}
+
+/**
+* Vertical rhythm
+*/
+$line-heights: (
+    xs: 1.2,
+    sm: $space * 0.7,
+    0: $space,
+    1: $space,
+    2: $space,
+    3: $space * 1.75,
+    4: $space * 2.25,
+    5: 1,
+    6: $space * 3,
+);
+$compact-line-heights: (
+    xs: 1.2,
+    sm: $space * 0.5,
+    0: 1.2,
+    1: 1,
+    2: 1,
+    3: $space * 1.5,
+    4: 1,
+    5: 1,
+    6: $space * 3,   
+);
+
+@function line-height($level) {
+    @return map-get($line-heights, $level);
+}
+@function compact-line-height($level) {
+    @return map-get($compact-line-heights, $level);
+}
+
+@mixin type-setting($level: 0) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
+    
+}
+html {
+    font-size: $base-font-size * .75;
+    @include min-screen-width(sm) {
+        font-size: $base-font-size;
+    }
+}
+body {
+    @include type-setting(0);
+    line-height: 1.333; // override: narrow text needs less whitespace
+    @include min-screen-width(sm) {
+        @include type-setting(0);
+    }
+    font-family: $base-font-family;
+    
+    // Create css vars
+    @each $level, $size in $type-scale {
+        --text--#{$level}: #{$size};
+    }
+}
+
+/* 1. Align left edge of list item text */
+ul {
+    list-style-position: inside; /* 1 */
+    margin-left: 1.1em; /* 1 */
+    text-indent: -1.1em; /* 1 */
+}
+
+
+h6,
+.h6 {
+    @include type-setting(0)
+}
+h5,
+.h5 {
+    @include type-setting(1);
+    @include min-screen-width(md) {
+        @include type-setting(2);
+    }
+    font-weight: $font-weight-light;
+}
+h4,
+.h4 {
+    @include type-setting(1);
+    @include min-screen-width(sm) {
+        @include type-setting(2);
+    }
+    @include min-screen-width(md) {
+        @include type-setting(3)
+    }
+}
+h3,
+.h3 {
+    @include type-setting(2);
+    @include min-screen-width(sm) {
+        @include type-setting(3);
+    }
+    @include min-screen-width(md) {
+        @include type-setting(4)
+    }
+
+}
+h2,
+.h2 {
+    @include type-setting(3);
+    @include min-screen-width(sm) {
+        @include type-setting(4)
+    }
+    @include min-screen-width(md) {
+        @include type-setting(5)
+    }
+
+    font-weight: $font-weight-light;
+}
+h1,
+.h1 {
+    @include type-setting(3);
+    @include min-screen-width(sm) {
+        @include type-setting(4);
+    }
+    @include min-screen-width(md) {
+        @include type-setting(5);
+    }
+}

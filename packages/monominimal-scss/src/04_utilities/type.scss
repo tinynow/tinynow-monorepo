@@ -1,0 +1,12 @@
+@each $sizeName, $size in $type-scale {
+    .canon-u-type--#{$sizeName} {
+        @include type-setting($sizeName);
+    }
+}
+@each $sizeName, $size in $type-scale {
+    .canon-u-compact--#{$sizeName} {
+        @include compact-type-setting($sizeName);
+    }
+}
+
+// TODO: export these and see if we can put the description right here
