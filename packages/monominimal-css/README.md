@@ -1,3 +1,6 @@
+{% extends "layout.njk" %}
+{% block content %}
+{% markdown %}
 # monominimal-scss
 Monominimal is a a component library built with view and supported by a scss framework. Component specific styles are bundled with `monominimal-vue`, but `monominimal-scss` can be used as a standalone style framework.
 
@@ -27,3 +30,5 @@ Monominimal is a base set of globals styles, scss utilities
 
 
 
+ {% endmarkdown %}
+ {% endblock %}
