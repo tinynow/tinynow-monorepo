@@ -559,49 +559,49 @@ a:hover, a:active, .link-style:hover, .link-style:active {
   line-height: 1;
 }
 
-.canon-layout {
+[class*=ctx] {
   /* A tube of content that with reasonable left and right margins */
 }
-.canon-layout.--tube {
+[class*=ctx][class*="--tube"] {
   max-width: 100%;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
 }
 @media screen and (min-width: 37.5rem) {
-  .canon-layout.--tube {
+  [class*=ctx][class*="--tube"] {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
   }
 }
 @media screen and (min-width: 56.25rem) {
-  .canon-layout.--tube {
+  [class*=ctx][class*="--tube"] {
     padding-left: 1.875rem;
     padding-right: 1.875rem;
   }
 }
 @media screen and (min-width: 75rem) {
-  .canon-layout.--tube {
+  [class*=ctx][class*="--tube"] {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
   }
 }
-.canon-layout.--readable p, .canon-layout.--readable li {
+[class*=ctx][class*="--readable"] p, [class*=ctx][class*="--readable"] li {
   max-width: 35rem;
 }
-.canon-layout.--centered {
+[class*=ctx][class*="--centered"] {
   margin-left: auto;
   margin-right: auto;
 }
-.canon-layout.--auto-flow > * + * {
+[class*=ctx][class*="--auto-flow"] > * + * {
   margin-top: 1.875rem;
 }
-.canon-layout.--auto-flow-compact {
+[class*=ctx][class*="--auto-flow-compact"] {
   line-height: 1.25;
 }
-.canon-layout.--auto-flow-compact > * + * {
+[class*=ctx][class*="--auto-flow-compact"] > * + * {
   margin-top: 0.9375rem;
 }
-.canon-layout.--full-width {
+[class*=ctx][class*="--full-width"] {
   width: 100vw;
   position: relative;
   left: 50%;

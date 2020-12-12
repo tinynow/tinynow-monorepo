@@ -1,0 +1,12 @@
+{
+    "pages": {
+        "index": {
+            "title": "Monominimal CSS: a web designer's coloring book for responsible adults.",
+            "navLabel": "Home"
+        },
+        "guide": {
+            "title": "Monominimal CSS - Guide",
+            "navLabel": "Guide"
+        }
+    }
+}

@@ -1,6 +1,6 @@
-.canon-layout {
+[class*="ctx"] {
     /* A tube of content that with reasonable left and right margins */
-    &.--tube {
+    &[class*="--tube"] {
         max-width: 100%;
         padding-left: $space/2;
         padding-right: $space/2;
@@ -18,27 +18,27 @@
             padding-right: $space*2;
         }
     }
-    &.--readable {
+    &[class*="--readable"] {
         p, li {
             max-width: $reading-line-width;
         }
     }
-    &.--centered {
+    &[class*="--centered"] {
         margin-left: auto;
         margin-right: auto;
     }
-    &.--auto-flow {
+    &[class*="--auto-flow"] {
         > * + * {
             margin-top: $space;
         }
     }
-    &.--auto-flow-compact {
+    &[class*="--auto-flow-compact"] {
         line-height: 1.25;
         > * + * {
             margin-top: $space/2;
         }
     }
-    &.--full-width {
+    &[class*="--full-width"] {
         width: 100vw;
         position: relative;
         left: 50%;
