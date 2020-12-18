@@ -20,17 +20,17 @@ const metadata = require('./documentation/src/metadata.json')
 const templates = 'documentation/src';
 /* nunjucks markdown setup via https://gist.github.com/kerryhatcher/1382950af52f3082ecdc668bba5aa11b */
 // The templates folder tells the nunjuck renderer where to find any *.njk files you source in your *.html files. 
-var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(templates));
-
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
+const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(templates));
+const markedOptions = {
+    // renderer: new marked.Renderer(),
+    // gfm: true,
     tables: true,
     breaks: false,
     pedantic: false,
     smartLists: true,
     smartypants: false
-});
+}
+marked.setOptions();
 
 // This takes the freshley created nunjucks envroment object (env) and passes it to nunjucks-markdown to have the custom tag regestered to the env object.
 // The second is the marked library. anything that can be called to render markdown can be passed here. 
@@ -41,16 +41,16 @@ njMarkdown.register(env, marked);
 // =======================================================================
 function buildHtml() {
     // Gets .html files. see file layout at bottom
-    return src('documentation**/*.md')
+    return src('documentation/**/*.md')
         // .pipe(rename(path => {
         //     if (path.basename === 'README') {
         //         path.basename = 'index';
         //     }
         //     console.log(arguments);
         // }))
-        .pipe(markdown())
-        // .pipe(data(() => metadata))
-        // // Renders template with nunjucks and marked
+        .pipe(markdown(markedOptions))
+        .pipe(data(() => metadata))
+        // Renders template with nunjucks and marked
         .pipe(gulpNunjucks.compile(data, { env: env }))
         // // Uncomment the following if your source pages are something other than *.html. 
         // .pipe(rename(function (path) { 

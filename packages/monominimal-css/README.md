@@ -1,14 +1,9 @@
-<!-- {% extends "layout.njk" %}
-{% set title = "Monominimal CSS - sometimes things ARE black and white" %}
-{% set pate = "home" %}
-{% block content %}
-{{ pages.index.title }}
--->
-# monominimal-scss
-Monominimal is a a component library built with view and supported by a scss framework. Component specific styles are bundled with `monominimal-vue`, but `monominimal-scss` can be used as a standalone style framework.
+# Monominimal CSS
+
 ## Principles
-- Provide opinionated defaults best practices in accessibility, responsive design, typography, performance, and usability
-- Make opinions opt-in or configurable
+- Quality of end user experience: design primitives that are accessible, responsive, readable, performant, harmonious, consistent, orderly, simple.
+- Quality of design experience: configurable variables adjust typography-first systems for layout and sizing, utility classes to provide flexibility
+- Confi
 - Balance utility classes with cascading styles (contexts)
 - Use only grayscale colors
 - Minimalist design aesthetic - prefer simple and conventional patterns over complex and novel.
@@ -19,6 +14,3 @@ Monominimal is a a component library built with view and supported by a scss fra
 - Mixins for easy media-queries, realistic shadows, and type-setting
 - Contexts for layout, typography, and flow systems. Contexts are classes that apply styles to containers and the elements within them. They leverage the cascade but don't force your hand like global styles will.
 - Simple one-purpose utility classes to speed development, provide flexibility, and reduce repetitive CSS rules.
-<!--
- {% endblock %}
- -->

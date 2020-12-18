@@ -2,11 +2,13 @@
     "pages": {
         "index": {
             "title": "Monominimal CSS: a web designer's coloring book for responsible adults.",
-            "navLabel": "Home"
+            "navLabel": "Home",
+            "extends": "layout.njk"
         },
         "guide": {
             "title": "Monominimal CSS - Guide",
-            "navLabel": "Guide"
+            "navLabel": "Guide",
+            "extends": "layout.njk"
         }
     }
 }
